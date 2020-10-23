@@ -5,6 +5,7 @@
 		<state id="0" name="q0">
 			<x>509.0</x>
 			<y>217.0</y>
+			<initial/>
 		</state>
 		<state id="1" name="q1">
 			<x>331.0</x>
@@ -52,12 +53,6 @@
 			<label>Token::Decimal</label>
 			<final/>
 		</state>
-		<state id="10" name="q10">
-			<x>342.0</x>
-			<y>212.0</y>
-			<label>text=""</label>
-			<initial/>
-		</state>
 		<!--The list of transitions.-->
 		<transition>
 			<from>0</from>
@@ -65,11 +60,6 @@
 			<read>-EOL</read>
 		</transition>
 		<transition>
-			<from>10</from>
-			<to>0</to>
-			<read/>
-		</transition>
-		<transition>
 			<from>3</from>
 			<to>3</to>
 			<read>[0-9]</read>
@@ -78,16 +68,6 @@
 			<from>5</from>
 			<to>5</to>
 			<read>[0-9]</read>
-		</transition>
-		<transition>
-			<from>8</from>
-			<to>2</to>
-			<read>[2-7]</read>
-		</transition>
-		<transition>
-			<from>2</from>
-			<to>3</to>
-			<read>[a-f]</read>
 		</transition>
 		<transition>
 			<from>2</from>
@@ -95,54 +75,9 @@
 			<read>[0-7]</read>
 		</transition>
 		<transition>
-			<from>2</from>
-			<to>3</to>
-			<read>[A-F]</read>
-		</transition>
-		<transition>
 			<from>0</from>
 			<to>1</to>
 			<read>EOF</read>
-		</transition>
-		<transition>
-			<from>3</from>
-			<to>4</to>
-			<read>h</read>
-		</transition>
-		<transition>
-			<from>3</from>
-			<to>3</to>
-			<read>[a-f]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>3</to>
-			<read>[a-f]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>2</to>
-			<read>[2-9]</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>0</to>
-			<read>-SPACE</read>
-		</transition>
-		<transition>
-			<from>8</from>
-			<to>6</to>
-			<read>B</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>3</to>
-			<read>[A-F]</read>
-		</transition>
-		<transition>
-			<from>3</from>
-			<to>3</to>
-			<read>[A-F]</read>
 		</transition>
 		<transition>
 			<from>2</from>
@@ -150,24 +85,34 @@
 			<read>[8-9]</read>
 		</transition>
 		<transition>
-			<from>0</from>
-			<to>8</to>
-			<read>0</read>
-		</transition>
-		<transition>
-			<from>0</from>
-			<to>8</to>
-			<read>1</read>
-		</transition>
-		<transition>
 			<from>8</from>
-			<to>5</to>
-			<read/>
+			<to>6</to>
+			<read>B</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>[a-f]</read>
 		</transition>
 		<transition>
 			<from>2</from>
-			<to>7</to>
-			<read>o</read>
+			<to>3</to>
+			<read>[A-F]</read>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>4</to>
+			<read>h</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>-SPACE</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read>[a-f]</read>
 		</transition>
 		<transition>
 			<from>5</from>
@@ -175,19 +120,64 @@
 			<read/>
 		</transition>
 		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>[A-F]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>3</to>
+			<read>[a-f]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>3</to>
+			<read>[A-F]</read>
+		</transition>
+		<transition>
 			<from>8</from>
 			<to>6</to>
 			<read>b</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>7</to>
+			<read>o</read>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>5</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>8</from>
+			<to>2</to>
+			<read>[2-7]</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>8</to>
+			<read>0</read>
 		</transition>
 		<transition>
 			<from>8</from>
 			<to>8</to>
 			<read>[0-1]</read>
 		</transition>
+		<transition>
+			<from>0</from>
+			<to>8</to>
+			<read>1</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read>[2-9]</read>
+		</transition>
 		<note>
 			<text>name:start</text>
 			<x>545.0</x>
-			<y>46.0</y>
+			<y>70.0</y>
 		</note>
 	</automaton>
 </structure>

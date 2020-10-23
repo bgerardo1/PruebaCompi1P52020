@@ -19,5 +19,5 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/../)
   
-add_executable(${PROJECT_NAME}  const_lexer.cpp
+add_executable(${PROJECT_NAME}  lexer.cpp
                                 test_lexer.cpp)
