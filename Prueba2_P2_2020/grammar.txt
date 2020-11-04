@@ -1,0 +1,39 @@
+Grammar
+=======
+
+input -> stmt_list opt_eol
+
+opt_eol -> EOL
+         | %epsilon
+
+stmt_list -> stmt_list EOL stmt
+            | stmt
+
+stmt -> assign
+        | PRINT ( expr )
+        | fun_decl
+
+assign -> IDENT = expr
+
+fun_decl -> IDENT opt_arg_list = expr
+
+opt_arg_list -> arg_list
+               | %epsilon
+
+arg_list -> arg_list arg
+            | arg
+
+arg -> NUMBER
+      | IDENT
+
+expr ->   expr + term
+        | expr - term
+        | term
+
+term -> term * factor
+        | term / factor
+        | factor
+
+factor -> IDENT
+        | NUMBER
+        | ( expr )
