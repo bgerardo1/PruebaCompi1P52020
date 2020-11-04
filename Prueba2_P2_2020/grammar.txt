@@ -1,39 +1,31 @@
 Grammar
 =======
 
-input -> stmt_list opt_eol
+input -> stmt_list                        // DONE
 
-opt_eol -> EOL
-         | %epsilon
-
-stmt_list -> stmt_list EOL stmt
+stmt_list -> stmt_list ; stmt ;          // Cambiar
             | stmt
 
-stmt -> assign
-        | PRINT ( expr )
+stmt -> assign                          // cambiar 
+        | PRINT expr
         | fun_decl
 
-assign -> IDENT = expr
+assign -> IDENT = expr                  // DONE
 
-fun_decl -> IDENT opt_arg_list = expr
-
-opt_arg_list -> arg_list
-               | %epsilon
-
-arg_list -> arg_list arg
-            | arg
+fun_decl -> IDENT ( arg ) = expr       //DONE pero revisar si algo falla
 
 arg -> NUMBER
-      | IDENT
+      | IDENT                          //DONE
 
 expr ->   expr + term
-        | expr - term
-        | term
-
+        | term                           // DOME
+ 
 term -> term * factor
-        | term / factor
-        | factor
+        | factor                     // DONE
 
 factor -> IDENT
         | NUMBER
-        | ( expr )
+        | ( expr )                    //DONE
+
+
+      

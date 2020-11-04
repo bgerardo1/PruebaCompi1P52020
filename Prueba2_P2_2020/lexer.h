@@ -7,7 +7,7 @@
 #include <vector>
 
 #define _Print {Token::KwPrint, "Print" }
-#define _Eol {Token::Eol, "\\n" }
+#define _Semicolon {Token::Semicolon, ";" }
 #define _OpenPar {Token::OpenPar, "(" }
 #define _ClosePar {Token::ClosePar, ")" }
 #define _Comma {Token::Comma, "," }
@@ -22,7 +22,7 @@
 
 enum class Token { 
     KwPrint,
-    Eol,
+    Semicolon,
     OpenPar, 
     ClosePar,
     Comma,

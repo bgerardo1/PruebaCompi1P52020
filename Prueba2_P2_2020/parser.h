@@ -4,29 +4,29 @@
 #include <iosfwd>
 #include "lexer.h"
 
-class Parser {
-public:
-	Parser(Lexer &lexer): lexer (lexer) { }
-	void parse();
-
+class Parser
+{
 private:
-	Lexer &lexer;
-	Token currToken;
+    Lexer& lexer;
+    Token currToken;
 
 public:
-void input();
-void opt_eol();
-void stm_list();
-void stm();
-void assign();
-void fun_decl();
-void opt_arg_list();
-void arg_list();
-void arg();
-void expr();
-void term();
-void factor();
-};
+ Parser(Lexer& lex) : lexer(lex){}  
+    void parse();
+    void input();
+    void stm_list();
+    void stm_list_p(); // Gramatica cambiada
+    void stm_p();//Gramatica cambiada
+    void stm();
+    void assign();
+    void fun_decl();
+    void arg();
+    void expr();
+    void expr_p(); // Gramatica Cambiada
+    void term();
+    void term_p(); // Gramatica cambiada
+    void factor();
 
+};
 
 #endif

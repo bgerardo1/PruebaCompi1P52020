@@ -1,0 +1,38 @@
+Grammar LL1
+=======
+
+input -> stmt_list                        
+
+stmt_list -> stmt stmt_p 
+
+stmt_list_p -> ; stmt_list ; stmt_list_p
+
+stmt -> assign stmt_p
+
+stmt_p ->  fun_decl();
+          | Print expr stmt_p
+          | epsilon
+
+assign -> IDENT = expr
+          | IDENT ( arg ) = expr 
+         
+
+fun_decl -> IDENT ( arg ) = expr      
+
+arg -> NUMBER
+      | IDENT
+
+expr_p -> term expr_p
+
+expr_p ->   expr + term
+        | expr - term
+        | epsilon
+
+term -> factor term_p
+
+term_p -> * factor term_p
+        | epsilon
+
+factor -> IDENT
+        | NUMBER
+        | ( expr )
